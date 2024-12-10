@@ -1,0 +1,242 @@
+/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Traceback (most recent call last):
+  File "/p44/PCDF/train.py", line 129, in <module>
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 1932, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 2268, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 3307, in training_step
+    loss = self.compute_loss(model, inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 3338, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1593, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1411, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/utils/operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/utils/operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/peft/peft_model.py", line 1644, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/paligemma/modeling_paligemma.py", line 427, in forward
+    image_outputs = self.vision_tower(pixel_values.to(inputs_embeds.dtype))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 1013, in forward
+    return self.vision_model(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 914, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 726, in forward
+    layer_outputs = encoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 470, in forward
+    hidden_states, attn_weights = self.self_attn(
+                                  ^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 416, in forward
+    attn_output = attn_output.transpose(1, 2).contiguous()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/p44/PCDF/train.py", line 129, in <module>
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 1932, in train
+[rank1]:     return inner_training_loop(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 2268, in _inner_training_loop
+[rank1]:     tr_loss_step = self.training_step(model, inputs)
+[rank1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 3307, in training_step
+[rank1]:     loss = self.compute_loss(model, inputs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 3338, in compute_loss
+[rank1]:     outputs = model(**inputs)
+[rank1]:               ^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1593, in forward
+[rank1]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1411, in _run_ddp_forward
+[rank1]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/utils/operations.py", line 819, in forward
+[rank1]:     return model_forward(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/utils/operations.py", line 807, in __call__
+[rank1]:     return convert_to_fp32(self.model_forward(*args, **kwargs))
+[rank1]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/peft/peft_model.py", line 1644, in forward
+[rank1]:     return self.base_model(
+[rank1]:            ^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
+[rank1]:     return self.model.forward(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+[rank1]:     output = module._old_forward(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/paligemma/modeling_paligemma.py", line 427, in forward
+[rank1]:     image_outputs = self.vision_tower(pixel_values.to(inputs_embeds.dtype))
+[rank1]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+[rank1]:     output = module._old_forward(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 1013, in forward
+[rank1]:     return self.vision_model(
+[rank1]:            ^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+[rank1]:     output = module._old_forward(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 914, in forward
+[rank1]:     encoder_outputs = self.encoder(
+[rank1]:                       ^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+[rank1]:     output = module._old_forward(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 726, in forward
+[rank1]:     layer_outputs = encoder_layer(
+[rank1]:                     ^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+[rank1]:     output = module._old_forward(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 470, in forward
+[rank1]:     hidden_states, attn_weights = self.self_attn(
+[rank1]:                                   ^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/hooks.py", line 169, in new_forward
+[rank1]:     output = module._old_forward(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/models/siglip/modeling_siglip.py", line 416, in forward
+[rank1]:     attn_output = attn_output.transpose(1, 2).contiguous()
+[rank1]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: KeyboardInterrupt

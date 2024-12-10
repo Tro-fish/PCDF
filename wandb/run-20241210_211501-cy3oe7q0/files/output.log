@@ -1,0 +1,56 @@
+/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Traceback (most recent call last):
+  File "/p44/PCDF/train.py", line 129, in <module>
+    trainer.train()
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 1932, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 2230, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/data_loader.py", line 454, in __iter__
+    current_batch = next(dataloader_iter)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/p44/PCDF/train.py", line 55, in __getitem__
+    image = Image.open(image_path).convert("RGB")
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/PIL/Image.py", line 3431, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/p44/PCDF/chart2text_statista/image/two_col/imgs/6974.png'
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/p44/PCDF/train.py", line 129, in <module>
+[rank1]:     trainer.train()
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 1932, in train
+[rank1]:     return inner_training_loop(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/transformers/trainer.py", line 2230, in _inner_training_loop
+[rank1]:     for step, inputs in enumerate(epoch_iterator):
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/accelerate/data_loader.py", line 454, in __iter__
+[rank1]:     current_batch = next(dataloader_iter)
+[rank1]:                     ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+[rank1]:     data = self._next_data()
+[rank1]:            ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+[rank1]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+[rank1]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank1]:             ~~~~~~~~~~~~^^^^^
+[rank1]:   File "/p44/PCDF/train.py", line 55, in __getitem__
+[rank1]:     image = Image.open(image_path).convert("RGB")
+[rank1]:             ^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/wani/anaconda3/envs/corning/lib/python3.12/site-packages/PIL/Image.py", line 3431, in open
+[rank1]:     fp = builtins.open(filename, "rb")
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: FileNotFoundError: [Errno 2] No such file or directory: '/p44/PCDF/chart2text_statista/image/two_col/imgs/6974.png'
