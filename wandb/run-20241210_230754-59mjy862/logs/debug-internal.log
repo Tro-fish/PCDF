@@ -1,0 +1,8 @@
+{"time":"2024-12-10T23:07:54.716900553+09:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2024-12-10T23:07:54.716926438+09:00","level":"INFO","msg":"created symlink","path":"/hynix_p41/PCDF/wandb/run-20241210_230754-59mjy862/logs/debug-core.log"}
+{"time":"2024-12-10T23:07:54.825521579+09:00","level":"INFO","msg":"created new stream","id":"59mjy862"}
+{"time":"2024-12-10T23:07:54.825564812+09:00","level":"INFO","msg":"stream: started","id":"59mjy862"}
+{"time":"2024-12-10T23:07:54.825649058+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"59mjy862"}
+{"time":"2024-12-10T23:07:54.825721824+09:00","level":"INFO","msg":"handler: started","stream_id":"59mjy862"}
+{"time":"2024-12-10T23:07:54.825746484+09:00","level":"INFO","msg":"sender: started","stream_id":"59mjy862"}
+{"time":"2024-12-10T23:07:55.127609478+09:00","level":"INFO","msg":"Starting system monitor"}

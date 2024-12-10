@@ -1,0 +1,7 @@
+/usr/anaconda3/envs/corning/lib/python3.10/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                                                                                                            | 0/9500 [00:00<?, ?it/s]/usr/anaconda3/envs/corning/lib/python3.10/site-packages/transformers/models/paligemma/configuration_paligemma.py:137: FutureWarning: The `vocab_size` attribute is deprecated and will be removed in v4.44, Please use `text_config.vocab_size` instead.
+  warnings.warn(
+  0%|▏                                                                                                                                               | 12/9500 [03:21<44:32:10, 16.90s/it]
+{'loss': 6.5339, 'grad_norm': 1.652662992477417, 'learning_rate': 2.105263157894737e-07, 'epoch': 0.05}

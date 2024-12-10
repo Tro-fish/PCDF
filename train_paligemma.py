@@ -9,6 +9,8 @@ from transformers import PaliGemmaProcessor, PaliGemmaForConditionalGeneration, 
 from peft import get_peft_model, LoraConfig, PeftModel, PeftConfig
 from accelerate import PartialState
 
+WANDB_RUN_NAME = "PaliGemma_statista"
+
 # python -m torch.distributed.launch --nproc_per_node=2 train_paligemma.py
 device_string = PartialState().process_index
 print("device_string: ", device_string)
@@ -17,7 +19,11 @@ print("device_string: ", device_string)
 adapter_path = "weight/checkpoint-200" # "./backup/decoder"  # adapter config와 model 파일이 위치한 폴더 경로
 model_id = "google/paligemma-3b-ft-scicap-224"  # base 모델 ID
 
-# qlora로 학습 진행
+# 데이터 경로 설정
+train_path = "dataset/chart2text_statista/chart2text_statista_train.json"
+valid_path = "dataset/chart2text_statista/chart2text_statista_val.json"
+
+# QLoRA로 학습 진행
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_quant_type="nf4",
@@ -86,14 +92,10 @@ def collate_fn(examples):
 # 모델과 프로세서 설정
 processor = PaliGemmaProcessor.from_pretrained(model_id)
 
-# 데이터 경로 설정
-train_path = "dataset/chart2text_statista/chart2text_statista_train.json"
-valid_path = "dataset/chart2text_statista/chart2text_statista_val.json"
-
 # 데이터셋 로드
 train_dataset = CustomDataset(train_path, processor)
 
-wandb.init(project="Chart-to-Text", name="PaliGemma_Training")
+wandb.init(project="Chart-to-Text", name=WANDB_RUN_NAME)
 
 # TrainingArguments 설정
 args = TrainingArguments(
