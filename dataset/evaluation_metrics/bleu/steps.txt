@@ -1,0 +1,9 @@
+1. make sure files in data folder are correct.
+2. perl multi-bleu.perl data/testOriginalSummary.txt < data/generated-p80.txt
+
+
+perl multi-bleu.perl /p44/PCDF/output/true_answers.txt < /p44/PCDF/output/finetuned_answers_filtered.txt
+
+
+BLEU = 0.02, 34.9/7.2/1.9/0.3 (BP=0.007, ratio=0.168, hyp_len=61615, ref_len=367812)
+BLEU = 9.75, 48.2/25.7/16.9/12.3 (BP=0.433, ratio=0.544, hyp_len=200141, ref_len=367812)

@@ -17,7 +17,7 @@ print("device_string: ", device_string)
 
 # 'best_model' 폴더에 저장된 adapter config와 weights를 불러옵니다.
 adapter_path = "weight/checkpoint-200" # "./backup/decoder"  # adapter config와 model 파일이 위치한 폴더 경로
-model_id = "google/paligemma-3b-ft-scicap-224"  # base 모델 ID
+model_id = "google/paligemma-3b-pt-224"  # base 모델 ID
 
 # 데이터 경로 설정
 train_path = "dataset/chart2text_statista/chart2text_statista_train.json"
@@ -95,7 +95,8 @@ processor = PaliGemmaProcessor.from_pretrained(model_id)
 # 데이터셋 로드
 train_dataset = CustomDataset(train_path, processor)
 
-wandb.init(project="Chart-to-Text", name=WANDB_RUN_NAME)
+if device_string == 0:  # 주 프로세스에서만 실행
+    wandb.init(project="Chart-to-Text", name=WANDB_RUN_NAME)
 
 # TrainingArguments 설정
 args = TrainingArguments(
