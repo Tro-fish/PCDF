@@ -31,7 +31,7 @@ model = PaliGemmaForConditionalGeneration.from_pretrained(
 )
 
 # LoRA adapter 로드
-#model = PeftModel.from_pretrained(model, adapter_path)
+# model = PeftModel.from_pretrained(model, adapter_path)
 processor = PaliGemmaProcessor.from_pretrained(model_id)
 
 # 데이터셋 클래스
@@ -71,7 +71,7 @@ def collate_fn(examples):
         max_length=512,
         truncation=True
     )
-    return tokens, [example['answer'] for example in examples]
+    return tokens, questions, [example['answer'] for example in examples]
 
 # 데이터 로드
 valid_path = "dataset/chart2text_statista/chart2text_statista_test.json"
@@ -85,11 +85,15 @@ true_answers = []
 
 with torch.no_grad():
     # tqdm을 사용하여 진행 상황 표시
-    for batch, answers in tqdm(valid_loader, desc="Validation Progress"):
+    for batch, questions, answers in tqdm(valid_loader, desc="Validation Progress"):
         batch = {k: v.to(f"cuda:{device_string}") for k, v in batch.items()}
         outputs = model.generate(**batch, max_length=512)
         decoded_answers = processor.batch_decode(outputs, skip_special_tokens=True)
-        predicted_answers.extend(decoded_answers)
+
+        # 질문을 제거하고 최종 출력만 추가
+        final_outputs = [output.replace(question, "").strip() for output, question in zip(decoded_answers, questions)]
+        
+        predicted_answers.extend(final_outputs)
         true_answers.extend(answers)
 
 # 결과 저장
