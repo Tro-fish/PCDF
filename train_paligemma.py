@@ -16,12 +16,12 @@ device_string = PartialState().process_index
 print("device_string: ", device_string)
 
 # 'best_model' 폴더에 저장된 adapter config와 weights를 불러옵니다.
-adapter_path = "weight/checkpoint-200" # "./backup/decoder"  # adapter config와 model 파일이 위치한 폴더 경로
+#adapter_path = "weight/checkpoint-200" # "./backup/decoder"  # adapter config와 model 파일이 위치한 폴더 경로
 model_id = "google/paligemma-3b-pt-224"  # base 모델 ID
 
 # 데이터 경로 설정
-train_path = "dataset/chart2text_statista/chart2text_statista_train.json"
-valid_path = "dataset/chart2text_statista/chart2text_statista_val.json"
+train_path = "dataset/chart2text_pew/chart2text_statista_train.json"
+valid_path = "dataset/chart2text_pew/chart2text_statista_val.json"
 
 # QLoRA로 학습 진행
 bnb_config = BitsAndBytesConfig(
@@ -100,20 +100,20 @@ if device_string == 0:  # 주 프로세스에서만 실행
 
 # TrainingArguments 설정
 args = TrainingArguments(
-    num_train_epochs=50,
+    max_steps=10000,
     remove_unused_columns=False,
     per_device_train_batch_size=2,
-    gradient_accumulation_steps=32,
-    warmup_steps=950,
+    gradient_accumulation_steps=64,
+    warmup_steps=1000,
     learning_rate=2e-5,
     weight_decay=1e-6,
     adam_beta2=0.999,
     logging_steps=10,
     optim="adamw_hf",
     save_strategy="steps",
-    save_steps=100,
+    save_steps=500,
     push_to_hub=False,
-    save_total_limit=5,
+    #save_total_limit=5,
     output_dir="weight",
     bf16=True,
     report_to=["wandb"],
